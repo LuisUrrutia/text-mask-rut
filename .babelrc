@@ -1,0 +1,64 @@
+{
+  "env": {
+    "legacy": {
+      "exclude": [
+        "node_modules/**"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": 4,
+              "browsers": ["ie >= 11"]
+            },
+            "spec": true,
+            "modules": false,
+            "useBuiltIns": "usage"
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "transform-remove-console",
+          "transform-runtime", {
+            "helpers": true,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ]
+    },
+    "legacy-rollup-umd": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": ["ie >= 11"]
+            },
+            "spec": true,
+            "modules": false,
+            "useBuiltIns": "usage"
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "transform-remove-console",
+          "transform-runtime", {
+            "helpers": true,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": ["env"]
+    }
+  }
+}
+

@@ -1,0 +1,46 @@
+{
+  "name": "text-mask-rut",
+  "version": "0.0.1",
+  "description": "A Text Mask addon to format the Chilean National Identifier Number (RUT)",
+  "main": "dist/legacy/index.js",
+  "module": "lib/index.js",
+  "repository": "https://github.com/LuisUrrutia/text-mask-rut.git",
+  "author": "Luis Urrutia",
+  "license": "MIT",
+  "keywords": [
+    "text-mask",
+    "rut"
+  ],
+  "devEngines": {
+    "node": "8.x || 9.x"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ./lib --ext .js",
+    "clean": "rimraf dist && mkdirp dist/legacy && mkdirp dist/legacy-umd",
+    "build": "npm run clean && rollup --config",
+    "coverage": "jest --coverage; open coverage/lcov-report/index.html || xdg-open coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-remove-console": "^6.9.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "jest": "^22.4.3",
+    "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
