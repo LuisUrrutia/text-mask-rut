@@ -10,7 +10,7 @@
           {
             "targets": {
               "node": 4,
-              "browsers": ["ie >= 11"]
+              "browsers": ["ie > 9"]
             },
             "spec": true,
             "modules": false,
@@ -36,7 +36,7 @@
           "env",
           {
             "targets": {
-              "browsers": ["ie >= 11"]
+              "browsers": ["ie > 9"]
             },
             "spec": true,
             "modules": false,
