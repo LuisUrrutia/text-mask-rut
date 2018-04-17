@@ -1,6 +1,8 @@
 # Text Mask RUT
 
 [![Node version](https://img.shields.io/node/v/text-mask-rut.svg?style=flat)](http://nodejs.org/download/)
+[![Build Status](https://travis-ci.org/LuisUrrutia/text-mask-rut.svg?branch=master)](https://travis-ci.org/LuisUrrutia/text-mask-rut)
+[![Coverage Status](https://coveralls.io/repos/github/LuisUrrutia/text-mask-rut/badge.svg?branch=master)](https://coveralls.io/github/LuisUrrutia/text-mask-rut?branch=master)
 [![NSP Status](https://nodesecurity.io/orgs/luisurrutia/projects/f3a88dff-5825-471b-87fc-07a2b513c1ac/badge)](https://nodesecurity.io/orgs/luisurrutia/projects/f3a88dff-5825-471b-87fc-07a2b513c1ac)
 
 A Text Mask addon to format the Chilean National Identifier Number (RUT)
