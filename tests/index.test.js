@@ -1,4 +1,4 @@
-import createRutMask, { convertToMask, addThousandsSeparator } from '../lib/index';
+import createRutMask, { convertToMask, addThousandsSeparator, cleanRutPart } from '../lib/index';
 
 describe('Mask conversion', () => {
   it('should return a dot', () => {
@@ -44,6 +44,35 @@ describe('Thousands Separator', () => {
 
     expect(result).toEqual('69.000.000');
   });
+
+  it('should not add the thousands separator', () => {
+    const result = addThousandsSeparator('100');
+
+    expect(result).toEqual('100');
+  });
+});
+
+describe('Clean RUT Part', () => {
+  it('should return the RUT without chars', () => {
+    const result = cleanRutPart('DUMMY17.882.988DUMMY');
+
+    expect(result.rut).toEqual('17882988');
+    expect(result.excess).toEqual('');
+  });
+
+  it('should return the RUT with one character excess', () => {
+    const result = cleanRutPart('17882988222');
+
+    expect(result.rut).toEqual('17882988');
+    expect(result.excess).toEqual('2');
+  });
+
+  it('should return a partial RUT removing the K char excess', () => {
+    const result = cleanRutPart('k17K8829882');
+
+    expect(result.rut).toEqual('178829');
+    expect(result.excess).toEqual('8');
+  });
 });
 
 describe('RUT Mask Creator', () => {
@@ -75,6 +104,23 @@ describe('RUT Mask Creator', () => {
       '[]',
     ];
     expect(rutMask('abc')).toEqual(expected);
+  });
+
+  it('should return a mask for a rut being written', () => {
+    const rutMask = createRutMask();
+
+    const expected = [
+      /\d/,
+      /\d/,
+      '.',
+      /\d/,
+      /\d/,
+      /\d/,
+      '[]',
+      '-',
+      '[]',
+    ];
+    expect(rutMask('17882')).toEqual(expected);
   });
 
   it('should return the next valid value for verification digit', () => {
