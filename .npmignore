@@ -4,5 +4,9 @@ yarn.lock
 node_modules
 npm-debug.log
 coverage
-.nyc_output
-yarn.lock
+.idea
+rollup.config.js
+rollup-legacy.config.js
+rollup-legacy-umd.config.js
+rut.gif
+yarn-error.log
