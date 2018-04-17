@@ -24,10 +24,12 @@ import React from 'react'
 import MaskedInput from 'react-text-mask'
 import createRutMask from 'text-mask-rut';
 
+const rutMask = createRutMask();
+
 export default () => (
   <div>
     <MaskedInput
-      mask={createRutMask}
+      mask={rutMask}
     />
   </div>
 )
