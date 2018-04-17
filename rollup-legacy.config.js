@@ -27,6 +27,10 @@ export default {
     }),
     resolve(),
     commonjs(),
-    uglify(),
+    uglify({
+      mangle: {
+        reserved: ['createRutMask'],
+      },
+    }),
   ],
 };

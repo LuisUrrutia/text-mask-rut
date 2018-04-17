@@ -11,11 +11,11 @@ const babelrc = JSON.parse(fs.readFileSync(path.join(__dirname, '.babelrc')));
 const babelConfig = babelrc.env['legacy-rollup-umd'];
 
 export default {
-  input: 'lib/index.js',
+  input: 'lib/index-umd.js',
   output: {
     file: 'dist/legacy-umd/index.js',
     format: 'umd',
-    name: 'text-mask-rut',
+    name: 'createRutMask',
     sourcemap: true,
   },
   plugins: [
@@ -27,6 +27,10 @@ export default {
     }),
     resolve(),
     commonjs(),
-    uglify(),
+    uglify({
+      mangle: {
+        reserved: ['createRutMask'],
+      },
+    }),
   ],
 };
