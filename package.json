@@ -1,6 +1,6 @@
 {
   "name": "text-mask-rut",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Text Mask addon to format the Chilean National Identifier Number (RUT)",
   "main": "dist/legacy/index.js",
   "module": "lib/index.js",
