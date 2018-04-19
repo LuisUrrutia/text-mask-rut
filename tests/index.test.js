@@ -1,4 +1,4 @@
-import createRutMask, { convertToMask, addThousandsSeparator, cleanRutPart } from '../lib/index';
+import createRutMask, { convertToMask, addThousandsSeparator, cleanRutPart, splitByLast } from '../lib/index';
 
 describe('Mask conversion', () => {
   it('should return a dot', () => {
@@ -49,6 +49,20 @@ describe('Thousands Separator', () => {
     const result = addThousandsSeparator('100');
 
     expect(result).toEqual('100');
+  });
+});
+
+describe('Split by last', () => {
+  it('should split the rut on dash', () => {
+    const result = splitByLast('17882988-2', '-');
+
+    expect(result).toEqual(['17882988', '2']);
+  });
+
+  it('should split one by the last char', () => {
+    const result = splitByLast('17.882.988', '.');
+
+    expect(result).toEqual(['17.882', '988']);
   });
 });
 
