@@ -54,6 +54,9 @@ yarn install
 But always check the tests and lint before to commit or PR
 
 ## Release History
+* 0.0.3
+    * Extract split functionality
+    * Reformat for codeclimate
 
 * 0.0.2
     * Fix UMD build
